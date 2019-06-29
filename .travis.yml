@@ -1,0 +1,19 @@
+language: node_js
+
+node_js: '10'
+
+cache: yarn
+
+jobs:
+  include:
+    - stage: release
+      language: node_js
+      node_js: '10'
+      script:
+        - yarn global install gh-pages
+        - yarn run build
+        - gh-pages -d dist -b master
+
+stages:
+  - name: release
+    if: branch = master AND type = push AND fork = false
