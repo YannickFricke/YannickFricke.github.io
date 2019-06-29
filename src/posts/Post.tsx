@@ -11,7 +11,7 @@ export const Post: React.FC<IPostProps> = (props) => {
 
     return <div>
         <h1>{props.post.title}</h1>
-        <p className={'publishdate'}>Published on {moment(props.post.publishDate).format('DD.MM.YYYY')}</p>
+        <p className={'publishdate'}>Published at {moment(props.post.publishDate).format('DD.MM.YYYY')}</p>
         <PostComponent />
     </div>;
 };
