@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js",
-    "deploy": "gh-pages --silent -d dist -b master -r $GH_REPO",
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
