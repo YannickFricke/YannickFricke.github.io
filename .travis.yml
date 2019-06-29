@@ -10,9 +10,8 @@ jobs:
       language: node_js
       node_js: '10'
       script:
-        - yarn global add gh-pages
         - yarn run build
-        - gh-pages -d dist -b master
+        - yarn run deploy
 
 stages:
   - name: release
