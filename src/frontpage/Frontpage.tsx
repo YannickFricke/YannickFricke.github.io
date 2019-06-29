@@ -7,6 +7,6 @@ import './frontpage.scss';
 export const Frontpage: React.FC = (props: any) => {
     return <PostPagination
         posts={posts}
-        perPage={2}
+        perPage={10}
     />;
 };
