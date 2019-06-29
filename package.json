@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js",
+    "deploy": "gh-pages -d dist -b master",
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@types/react-router-dom": "^4.3.4",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "image-loader": "^0.0.1",
     "moment": "^2.24.0",
