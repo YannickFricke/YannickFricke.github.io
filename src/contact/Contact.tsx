@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, GridColumn, GridRow, Icon } from 'semantic-ui-react';
 
 import './Contact.scss';
 

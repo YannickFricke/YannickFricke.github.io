@@ -1,7 +1,7 @@
 import moment = require('moment');
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GridColumn, Icon, Pagination } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import slugify from 'slugify';
 import { IPost } from '../posts/IPost';
 
