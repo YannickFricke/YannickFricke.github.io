@@ -22,6 +22,7 @@
 				const scriptTags = document.getElementsByTagName('script');
 				const s = scriptTags[scriptTags.length - 1];
 				g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'matomo.js';
+				s.parentNode.append(g);
 
 				window.addEventListener('hashchange', function() {
 					_paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
