@@ -11,6 +11,7 @@ jobs:
       node_js: '10'
       script:
         - yarn run build
+        - echo "yannickfricke.de" > dist/CNAME
         - yarn gh-pages --silent -d dist -b master -r https://$GH_TOKEN@github.com/YannickFricke/YannickFricke.github.io.git
 
 stages:
