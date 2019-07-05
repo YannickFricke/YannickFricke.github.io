@@ -22,9 +22,10 @@
 					_paq.push(['setSiteId', '1']);
 					const d = document;
 					const g = d.createElement('script');
-					const s = d.getElementById('app');
+					const scriptTags = document.getElementsByTagName('script');
+					const s = scriptTags[scriptTags.length - 1];
 					g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'matomo.js';
-					s.parentNode.insertBefore(g, s);
+					s.parentNode.append(g);
 				})();
         	});
 		</script>
