@@ -4,7 +4,7 @@ import { posts } from '../posts';
 
 import './frontpage.scss';
 
-export const Frontpage: React.FC = (props: any) => {
+export const Frontpage: React.FC = () => {
     return <PostPagination
         posts={posts}
         perPage={10}
