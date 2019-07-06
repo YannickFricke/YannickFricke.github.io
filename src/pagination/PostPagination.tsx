@@ -1,9 +1,9 @@
-import moment = require('moment');
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 import slugify from 'slugify';
 import { IPost } from '../posts/IPost';
+import { formatDate } from '../posts/Post';
 
 interface IPostPaginationProps {
     /**
@@ -65,7 +65,7 @@ const PostPagination = (props: IPostPaginationProps) => {
                 <h1><Link to={'/post/' + slugify(entry.title, {
                     lower: true,
                 })}>{entry.title}</Link></h1>
-                <p className={'publishdate'}>Published at {moment(entry.publishDate).format('DD.MM.YYYY')}</p>
+                <p className={'publishdate'}>Published at {formatDate(entry.publishDate)}</p>
             </div>;
         })}
     </>);
