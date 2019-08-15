@@ -7,12 +7,6 @@ import { PostsList } from '../PostsList';
 export const TagRoute = (props: any) => {
     const tag = props.match.params.tag;
     const foundPosts = PostsList.filter((entry) => {
-        // for (const postTag of entry.tags) {
-        //     if (Slugify(postTag) === tag) {
-        //         return true;
-        //     }
-        // }
-
         return entry.tags.map((entryTag) => {
             return Slugify(entryTag);
         }).includes(tag);
