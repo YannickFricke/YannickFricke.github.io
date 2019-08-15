@@ -1,0 +1,13 @@
+#socialIcons {
+    display: none;
+
+    @include breakpoint('m') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    a {
+        font-size: 24px;
+    }
+}

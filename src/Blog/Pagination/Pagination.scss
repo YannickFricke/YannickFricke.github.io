@@ -1,0 +1,19 @@
+#pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    #previousButton {
+        transform: rotate(90deg);
+        margin-right: -3px;
+    }
+
+    #current-page {
+        margin: 0 5px;
+    }
+
+    #nextButton {
+        transform: rotate(-90deg);
+        margin-left: -1px;
+    }
+}

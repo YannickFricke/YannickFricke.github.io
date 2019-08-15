@@ -1,0 +1,19 @@
+$size: 20px;
+
+.chevron {
+    width: $size;
+    height: $size;
+    background-image: url('./Homepage/Chevron/chevron.svg');
+    background-repeat: no-repeat;
+    color: $textColor;
+    background-size: contain;
+    background-position: center;
+    float: left;
+
+    margin-right: 7.5px;
+    transition: all .3s;
+
+    &.closed {
+        transform: rotate(-90deg);
+    }
+}

@@ -2,15 +2,18 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.tsx',
-    mode: 'production',
-    context: path.resolve(__dirname),
+    entry: ['./src/index.tsx', './src/index.scss'],
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
+        path: __dirname + '/dist',
+        publicPath: '/',
     },
+
+    mode: process.env.NODE_ENV === 'dev' ? 'development' : 'production',
+    context: path.resolve(__dirname),
     module: {
         rules: [
             {
@@ -20,7 +23,12 @@ module.exports = {
             {
                 test: /\.s?css$/,
                 loader: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'dev',
+                        },
+                    },
                     'css-loader',
                     'sass-loader'
                 ],
@@ -45,12 +53,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'assets/index.html'
         }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
+        }),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 9000,
-        hot: true
+        hot: true,
+        historyApiFallback: {
+            index: 'index.html',
+        }
     }
 };
-

@@ -1,8 +1,45 @@
-body {
-    background-color: #191919;
-    color: #F0F0F0;
-}
+@import './styles/mixins';
+@import './styles/variables';
 
-.publishdate {
-    color: grey;
-}
+/*
+ * Global styles
+ */
+@import './App.scss';
+
+/*
+ * Sidebar
+ */
+@import './Sidebar/Sidebar.scss';
+@import './Sidebar/Menu/Menu.scss';
+@import './Sidebar/Menu/OffcanvasMenu.scss';
+@import './Sidebar/SocialIcons.scss';
+
+/*
+ * Homepage
+ */
+@import './Homepage/Homepage.scss';
+@import './Homepage/QuickFacts.scss';
+@import './Homepage/Chevron/Chevron.scss';
+
+/*
+ * Projects
+ */
+@import './Projects/Projects.scss';
+@import './Projects/Project.scss';
+
+/*
+ * Blog
+ */
+@import './Blog/BlogList.scss';
+@import './Blog/SinglePost.scss';
+@import './Blog/Pagination/Pagination.scss';
+
+/*
+ * 404 component
+ */
+@import './NotFound.scss';
+
+/*
+ * vendor packages
+ */
+@import '../assets/css/all.css';

@@ -1,0 +1,49 @@
+$borderProps: 1px solid rgba($color: $textColor, $alpha: 0.5);
+$padding: 1rem;
+
+.project {
+    border: $borderProps;
+    margin-top: $padding;
+
+    .project-name {
+        font-size: 2rem;
+        padding: $padding;
+        border-bottom: $borderProps;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .project-languages {
+        padding: $padding;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: $borderProps;
+
+        .project-language {
+            text-align: center;
+            width: 25%;
+            margin: 5px;
+            padding: 10px;
+            width: auto;
+            border: $borderProps;
+            border-radius: 50px;
+        }
+    }
+
+    .gained-expertise {
+        padding-left: $padding;
+        
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li::before {
+                content: '-';
+                padding-right: 5px;
+            }
+        }
+    }
+}
