@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -60,6 +61,12 @@ module.exports = {
             chunkFilename: '[id].css',
             ignoreOrder: false, // Enable to remove warnings about conflicting order
         }),
+        new CopyPlugin([
+            {
+                from: './assets/_redirects',
+                to: '.',
+            }
+        ]),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
