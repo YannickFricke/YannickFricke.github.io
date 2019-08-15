@@ -3,6 +3,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -51,6 +52,10 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
+        new FaviconsWebpackPlugin({
+            logo: './assets/favicon.png',
+            inject: true,
+        }),
         new HtmlWebpackPlugin({
             template: 'assets/index.html'
         }),
