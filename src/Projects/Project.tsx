@@ -2,9 +2,11 @@ import React from 'react';
 import { IProjectEntry } from './ProjectEntries';
 
 export const Project: React.FC<IProjectEntry> = (props) => {
+    const projectName = props.url !== undefined ? <a href={props.url}>{props.name}</a> : props.name;
+
     return <div className="project">
         <div className="project-name">
-            <a href={props.url}>{props.name}</a>
+            {projectName}
         </div>
         <div className="project-languages">
             {props.usedLanguages.map((entry, index) => {

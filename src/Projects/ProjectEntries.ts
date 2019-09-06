@@ -1,6 +1,6 @@
 export interface IProjectEntry {
     name: string;
-    url: string;
+    url: string | undefined;
     usedLanguages: string[];
     gainedExpertise: string[];
 }
