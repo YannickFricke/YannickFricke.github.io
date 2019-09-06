@@ -6,6 +6,36 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const devEnvironment = process.env.NODE_ENV === 'dev';
+
+const plugins = [
+    new HtmlWebpackPlugin({
+        template: 'assets/index.html'
+    }),
+    new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // all options are optional
+        filename: '[name].css',
+        chunkFilename: '[id].css',
+        ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
+
+];
+
+if (!devEnvironment) {
+    plugins.push(new FaviconsWebpackPlugin({
+        logo: './assets/favicon.png',
+        inject: true,
+    }));
+
+    plugins.push(new CopyPlugin([
+        {
+            from: './assets/_redirects',
+            to: '.',
+        }
+    ]));
+}
+
 module.exports = {
     entry: ['./src/index.tsx', './src/index.scss'],
     output: {
@@ -14,7 +44,7 @@ module.exports = {
         publicPath: '/',
     },
 
-    mode: process.env.NODE_ENV === 'dev' ? 'development' : 'production',
+    mode: devEnvironment ? 'development' : 'production',
     context: path.resolve(__dirname),
     module: {
         rules: [
@@ -28,7 +58,7 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            hmr: process.env.NODE_ENV === 'dev',
+                            hmr: devEnvironment,
                         },
                     },
                     'css-loader',
@@ -51,28 +81,7 @@ module.exports = {
         ]
     },
     devtool: 'source-map',
-    plugins: [
-        new FaviconsWebpackPlugin({
-            logo: './assets/favicon.png',
-            inject: true,
-        }),
-        new HtmlWebpackPlugin({
-            template: 'assets/index.html'
-        }),
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // all options are optional
-            filename: '[name].css',
-            chunkFilename: '[id].css',
-            ignoreOrder: false, // Enable to remove warnings about conflicting order
-        }),
-        new CopyPlugin([
-            {
-                from: './assets/_redirects',
-                to: '.',
-            }
-        ]),
-    ],
+    plugins: plugins,
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
