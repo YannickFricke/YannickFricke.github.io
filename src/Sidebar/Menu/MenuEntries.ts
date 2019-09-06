@@ -17,4 +17,8 @@ export const MenuEntries: IMenuEntry[] = [
         title: 'Blog',
         url: '/blog',
     },
+    {
+        title: 'Imprint',
+        url: '/imprint',
+    },
 ];

@@ -4,6 +4,7 @@ import { BlogList } from './Blog/BlogList';
 import { PostRoute } from './Blog/PostRoute';
 import { TagRoute } from './Blog/Tags/TagRoute';
 import { Homepage } from './Homepage/Homepage';
+import { Imprint } from './Imprint/Imprint';
 import { NotFound } from './NotFound';
 import { Projects } from './Projects/Projects';
 import { Sidebar } from './Sidebar/Sidebar';
@@ -23,6 +24,9 @@ export const App: React.FC = () => {
                 <Route exact path={'/blog'} component={BlogList} />
                 <Route exact path={'/blog/tag/:tag'} component={TagRoute} />
                 <Route exact path={'/blog/:slug'} component={PostRoute} />
+
+                {/* Imprint */}
+                <Route exact path={'/imprint'} component={Imprint} />
 
                 {/* 404 page */}
                 <Route component={NotFound} />
