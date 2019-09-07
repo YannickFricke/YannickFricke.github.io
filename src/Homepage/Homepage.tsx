@@ -1,4 +1,5 @@
 import React from 'react';
+import { Title } from '../Utilities';
 import { QuickFacts } from './QuickFacts';
 
 const getAge = () => {
@@ -12,6 +13,8 @@ const getAge = () => {
 
 export const Homepage: React.FC = () => {
     return <div id="homepage">
+        <Title title="About me" />
+
         <h2>Welcome on my homepage!</h2>
         <p>My name is Yannick Fricke, I am {getAge()} years old and live in the wonderful city called "Braunschweig" in Germany.</p>
         <p>Here are some facts about me:</p>

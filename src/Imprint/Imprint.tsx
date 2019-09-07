@@ -1,7 +1,10 @@
 import React from 'react';
+import { Title } from '../Utilities';
 
 export const Imprint: React.FC = () => {
     return <div id="imprint">
+        <Title title="Imprint" />
+
         <h1>Impressum</h1>
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
