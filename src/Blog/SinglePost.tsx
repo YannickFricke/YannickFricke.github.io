@@ -14,9 +14,9 @@ export const SinglePost: React.FC<IPost> = (props) => {
     })}</span>;
 
     return <div id="post">
-        <div className="title">
+        <h1 className="title">
             {props.title}
-        </div>
+        </h1>
         <div className="meta-information">
             <div className="publish-date">
                 Published at: {FormatDate(props.publishDate)}
