@@ -7,6 +7,18 @@ export interface IProjectEntry {
 
 export const ProjectEntries: IProjectEntry[] = [
     {
+        name: 'React resettable state',
+        url: 'https://github.com/YannickFricke/react-resettable-state',
+        usedLanguages: [
+            'React',
+            'TypeScript',
+        ],
+        gainedExpertise: [
+            'Writing custom hooks for React',
+            'Using Github Actions',
+        ],
+    },
+    {
         name: 'Twitch Unfollow Notifier',
         url: 'https://github.com/YannickFricke/TwitchUnfollowNotifier',
         usedLanguages: [
