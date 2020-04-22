@@ -8,9 +8,9 @@ import { IPost } from './IPost';
 export const SinglePost: React.FC<IPost> = (props) => {
     const PostComponent = props.Component;
 
-    const taglist = <span>Tags: {props.tags.map((entry) => {
+    const taglist = <span>Tags: {props.tags.map((entry, index) => {
         return <span key={entry} className="tag">
-            <Link to={`/blog/tag/${Slugify(entry)}`}>{entry}</Link>
+            <Link to={`/blog/tag/${Slugify(entry)}`}>{entry}</Link>{index < props.tags.length - 1 && ', '}
         </span>;
     })}</span>;
 
