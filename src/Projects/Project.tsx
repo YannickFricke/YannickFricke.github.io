@@ -8,6 +8,9 @@ export const Project: React.FC<IProjectEntry> = (props) => {
         <div className="project-name">
             {projectName}
         </div>
+        {props.description && <div className="project-description">
+            {props.description}
+        </div>}
         <div className="project-languages">
             {props.usedLanguages.map((entry, index) => {
                 return <div key={index} className="project-language">

@@ -10,7 +10,7 @@ const devEnvironment = process.env.NODE_ENV === 'dev';
 
 const plugins = [
     new HtmlWebpackPlugin({
-        template: 'assets/index.html'
+        template: 'assets/index.html',
     }),
     new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
@@ -19,7 +19,6 @@ const plugins = [
         chunkFilename: '[id].css',
         ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
-
 ];
 
 if (!devEnvironment) {
@@ -32,7 +31,7 @@ if (!devEnvironment) {
         {
             from: './assets/_redirects',
             to: '.',
-        }
+        },
     ]));
 }
 
@@ -62,14 +61,14 @@ module.exports = {
                         },
                     },
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ],
             },
             {
                 test: /\.(svg|eot|png|woff2?|ttf)$/,
                 loader: 'file-loader',
-            }
-        ]
+            },
+        ],
     },
     resolve: {
         extensions: [
@@ -77,8 +76,8 @@ module.exports = {
             '.tsx',
             '.js',
             '.scss',
-            '.css'
-        ]
+            '.css',
+        ],
     },
     devtool: 'source-map',
     plugins: plugins,
@@ -89,6 +88,6 @@ module.exports = {
         hot: true,
         historyApiFallback: {
             index: 'index.html',
-        }
-    }
+        },
+    },
 };

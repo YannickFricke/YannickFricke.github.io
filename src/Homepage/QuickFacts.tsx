@@ -9,19 +9,26 @@ export const QuickFacts: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
 
     return <div id="quickfacts">
-        <div className="fact fact-header" onClick={() => setCurrentIndex(1)}><Chevron open={currentIndex === 1} /> How it all started</div>
+        <div className="fact fact-header" onClick={() => setCurrentIndex(1)}><Chevron open={currentIndex === 1}/> How it
+            all started
+        </div>
         <div className={getClassNames(1, currentIndex)}>
-            <p>In my early days (around age 8) I was fascinated about computers and I thought: "One day I would like to know how to make applications".</p>
+            <p>In my early days (around age 8) I was fascinated about computers and I thought: "One day I would like to
+                know how to make applications".</p>
             <p>Still interested I lend some IT books from our local library with the age of 12</p>
             <p>For sure, with that age you don't know all the words, so you have to gain a bigger vocabulary.</p>
-            <p>With the age of 16 I bought my first own book for 50 &euro; (that was my pocket money for a whole month!).</p>
+            <p>With the age of 16 I bought my first own book for 50 &euro; (that was my pocket money for a whole
+                month!).</p>
             <p>Visual Basic .Net was my first choice, because I heard from a friend that it should be easy to learn.</p>
             <p>But sadly I lost the interest in it because I didn't understand arrays (now I laught about that!).</p>
-            <p>Giving up? No way! After a short break I started to learn PHP. In these days I found a very nice mentor who helped me a lot and I'm very grateful for him.</p>
+            <p>Giving up? No way! After a short break I started to learn PHP. In these days I found a very nice mentor
+                who helped me a lot and I'm very grateful for him.</p>
             <p>Now I'm practicing PHP for several years and learned some other languages (which are listed below).</p>
         </div>
 
-        <div className="fact fact-header" onClick={() => setCurrentIndex(2)}><Chevron open={currentIndex === 2} /> Hobbies</div>
+        <div className="fact fact-header" onClick={() => setCurrentIndex(2)}><Chevron
+            open={currentIndex === 2}/> Hobbies
+        </div>
         <div className={getClassNames(2, currentIndex)}>
             <p>In my freetime I enjoy doing the following things:</p>
             <ul>
@@ -33,7 +40,9 @@ export const QuickFacts: React.FC = () => {
             </ul>
         </div>
 
-        <div className="fact fact-header" onClick={() => setCurrentIndex(3)}><Chevron open={currentIndex === 3} /> Languages I know</div>
+        <div className="fact fact-header" onClick={() => setCurrentIndex(3)}><Chevron
+            open={currentIndex === 3}/> Languages I know
+        </div>
         <div className={getClassNames(3, currentIndex)}>
             <ul>
                 <li>German (native language)</li>
@@ -51,7 +60,9 @@ export const QuickFacts: React.FC = () => {
             </ul>
         </div>
 
-        <div className="fact fact-header" onClick={() => setCurrentIndex(4)}><Chevron open={currentIndex === 4} /> Technologies I use</div>
+        <div className="fact fact-header" onClick={() => setCurrentIndex(4)}><Chevron
+            open={currentIndex === 4}/> Technologies I use
+        </div>
         <div className={getClassNames(4, currentIndex)}>
             <p>Server side</p>
             <ul>
@@ -76,10 +87,13 @@ export const QuickFacts: React.FC = () => {
             <ul>
                 <li><a href="https://travis-ci.org/">TravisCI</a></li>
                 <li><a href="https://gitlab.com/">GitLab CI</a></li>
+                <li><a href="https://github.com/features/actions">GitHub Actions</a></li>
             </ul>
         </div>
 
-        <div className="fact fact-header" onClick={() => setCurrentIndex(5)}><Chevron open={currentIndex === 5} /> Software I use</div>
+        <div className="fact fact-header" onClick={() => setCurrentIndex(5)}><Chevron
+            open={currentIndex === 5}/> Software I use
+        </div>
         <div className={getClassNames(5, currentIndex)}>
             <p>Operating systems</p>
             <ul>

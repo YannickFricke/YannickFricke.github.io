@@ -4,6 +4,7 @@ import { NotFound } from '../NotFound';
 import { PostsList } from './PostsList';
 import { SinglePost } from './SinglePost';
 
+// tslint:disable-next-line:no-any
 export const PostRoute: React.FC = (props: any) => {
     const postUrl = props.match.params.slug;
     const foundPosts = PostsList.filter((entry) => {

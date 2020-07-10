@@ -5,8 +5,16 @@
   "author": "Yannick Fricke <yannickfricke@googlemail.com>",
   "license": "MIT",
   "scripts": {
+    "predev": "npm run build",
     "dev": "NODE_ENV=dev webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "favicons-webpack-plugin": "^3.0.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "react-helmet": "^6.0.0",
+    "slugify": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",
@@ -18,6 +26,7 @@
     "html-webpack-plugin": "^4.2.0",
     "image-loader": "^0.0.1",
     "node-sass": "^4.13.1",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -30,12 +39,5 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
-  },
-  "dependencies": {
-    "copy-webpack-plugin": "^5.1.1",
-    "favicons-webpack-plugin": "^3.0.1",
-    "mini-css-extract-plugin": "^0.9.0",
-    "react-helmet": "^6.0.0",
-    "slugify": "^1.4.0"
   }
 }

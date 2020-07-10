@@ -1,6 +1,46 @@
 #projects {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    margin-bottom: 1rem;
+
+    @include breakpoint('m') {
+        margin-bottom: 0;
+    }
+
+    .pagination {
+        display:         flex;
+        flex-direction:  column;
+        justify-content: center;
+        align-items:     center;
+
+        .pagination--controls {
+            display:        flex;
+            flex-direction: row;
+            margin:         1rem 0;
+            user-select:    none;
+
+            .pages {
+                display:        flex;
+                flex-direction: row;
+                margin:         0 0.5rem;
+
+                .page {
+                    margin: 0 0.5rem;
+                }
+            }
+
+            .next-page, .page, .previous-page {
+                cursor: pointer;
+            }
+        }
+
+        .pagination--content {
+            display:               grid;
+            grid-template-columns: 1fr;
+            gap:                   1rem 0;
+
+            @include breakpoint('m') {
+                grid-template-columns: repeat(3, 1fr);
+                gap:                   0 1rem;
+            }
+        }
+    }
 }
