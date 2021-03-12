@@ -8,13 +8,13 @@
     .pagination {
         display:         flex;
         flex-direction:  column;
-        justify-content: center;
+        justify-content: baseline;
         align-items:     center;
 
         .pagination--controls {
             display:        flex;
             flex-direction: row;
-            margin:         1rem 0;
+            padding:         1rem 0;
             user-select:    none;
 
             .pages {
@@ -24,11 +24,19 @@
 
                 .page {
                     margin: 0 0.5rem;
+
+                    &.active {
+                        color: #32cd32;
+                    }
                 }
             }
 
             .next-page, .page, .previous-page {
                 cursor: pointer;
+
+                &:hover {
+                    color: #32cd32;
+                }
             }
         }
 
@@ -36,6 +44,7 @@
             display:               grid;
             grid-template-columns: 1fr;
             gap:                   1rem 0;
+            margin-top: 1rem;
 
             @include breakpoint('m') {
                 grid-template-columns: repeat(3, 1fr);

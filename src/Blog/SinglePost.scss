@@ -1,21 +1,36 @@
 #post {
-    margin-top: 1rem;
+  margin-top: 1rem;
 
-    .title {
-        font-size: 2rem;
-        margin-bottom: 0;
-    }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
 
-    .meta-information {
-        color: gray;
-        margin-bottom: 1rem;
+  .meta-information {
+    color: gray;
+    margin-bottom: 1rem;
 
-        .tags .tag {
-            margin-left: 5px;
+    .tags {
+      margin-bottom: 1.5rem;
+      
+      .tag {
+        margin-left: 5px;
 
-            a {
-                text-decoration: none;
-            }
+        a {
+          text-decoration: none;
         }
+      }
     }
+  }
+
+  #post-content {
+      p {
+          margin: 0.75rem 0;
+      }
+
+      h2, h3, h4, h5 {
+          margin: 2rem 0 0 0;
+      }
+  }
 }
+
