@@ -146,9 +146,10 @@ export const ProjectEntries: IProjectEntry[] = [
         url: 'https://github.com/YannickFricke/BashMigration',
         usedLanguages: [Language.Bash],
         gainedExpertise: [
-            'Scripting with Bash',
+            'Bash scripting',
             'Writing a migration system',
             'Applying and removing migrations',
+            'Providing abstractions for common tasks (package manager, installation steps, colors)',
         ],
     },
     {
